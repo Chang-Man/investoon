@@ -7,6 +7,6 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/build/index.html");
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("server is running!");
 });
