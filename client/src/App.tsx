@@ -1,5 +1,5 @@
 function App() {
-  return <div className='App'>창붕이좀 살려주세요</div>;
+  return <div className='App'>앙아앙앙ㅇ</div>;
 }
 
 export default App;
