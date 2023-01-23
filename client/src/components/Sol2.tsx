@@ -2,9 +2,13 @@ import { Box, Typography } from "@mui/material";
 import { Layout } from "./common/Layout";
 import DividendImg from "../public/dividend.png";
 
-export function Sol2() {
+interface Props {
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export function Sol2({ setCurrentPage }: Props) {
   return (
-    <Layout>
+    <Layout setCurrentPage={setCurrentPage}>
       <Box
         sx={{
           width: "100%",

@@ -2,9 +2,13 @@ import { Box, Typography } from "@mui/material";
 import { Layout } from "./common/Layout";
 import IpExampleImg from "../public/ipExample.png";
 
-export function Sol3() {
+interface Props {
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export function Sol3({ setCurrentPage }: Props) {
   return (
-    <Layout>
+    <Layout setCurrentPage={setCurrentPage}>
       <Box
         sx={{
           width: "100%",

@@ -2,9 +2,13 @@ import { Box, Typography } from "@mui/material";
 import { Layout } from "./common/Layout";
 import NeedsImg from "../public/needs.jpg";
 
-export function Needs() {
+interface Props {
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export function Needs({ setCurrentPage }: Props) {
   return (
-    <Layout>
+    <Layout setCurrentPage={setCurrentPage}>
       <Box
         sx={{
           width: "100%",

@@ -5,11 +5,11 @@ import { Box, Typography } from "@mui/material";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
-// interface Props {
-//   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
-// }
+interface Props {
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+}
 
-export function Main() {
+export function Main({ setCurrentPage }: Props) {
   return (
     <Box
       sx={{
@@ -41,7 +41,10 @@ export function Main() {
           웹툰, 웹소설 투자 플랫폼
         </Typography>
       </Box>
-      <ArrowCircleDownIcon sx={{ color: "white", fontSize: "2rem" }} />
+      <ArrowCircleDownIcon
+        sx={{ color: "white", fontSize: "2rem", cursor: "pointer" }}
+        onClick={() => setCurrentPage((prev) => prev + 1)}
+      />
       {/* <DownWhiteKey setCurrentPage={setCurrentPage} /> */}
     </Box>
   );

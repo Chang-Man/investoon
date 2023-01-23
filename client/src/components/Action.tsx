@@ -8,7 +8,10 @@ import {
 } from "@mui/material";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 
-export function Action() {
+interface Props {
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+}
+export function Action({ setCurrentPage }: Props) {
   return (
     <Box
       sx={{
@@ -30,7 +33,10 @@ export function Action() {
           alignItems: "center",
         }}
       >
-        <ArrowCircleUpIcon sx={{ color: "#865FF5", fontSize: "2rem" }} />
+        <ArrowCircleUpIcon
+          sx={{ color: "#865FF5", fontSize: "2rem", cursor: "pointer" }}
+          onClick={() => setCurrentPage((prev) => prev - 1)}
+        />
         <Box
           sx={{
             width: "100%",

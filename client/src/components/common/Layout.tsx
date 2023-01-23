@@ -4,8 +4,12 @@ import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 
 interface Props {
   children: React.ReactNode;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
-export const Layout: React.FunctionComponent<Props> = (props: Props) => {
+export const Layout: React.FunctionComponent<Props> = ({
+  children,
+  setCurrentPage,
+}: Props) => {
   return (
     <Box
       sx={{
@@ -27,9 +31,15 @@ export const Layout: React.FunctionComponent<Props> = (props: Props) => {
           alignItems: "center",
         }}
       >
-        <ArrowCircleUpIcon sx={{ color: "#865FF5", fontSize: "2rem" }} />
-        {props.children}
-        <ArrowCircleDownIcon sx={{ color: "#865FF5", fontSize: "2rem" }} />
+        <ArrowCircleUpIcon
+          sx={{ color: "#865FF5", fontSize: "2rem", cursor: "pointer" }}
+          onClick={() => setCurrentPage((prev) => prev - 1)}
+        />
+        {children}
+        <ArrowCircleDownIcon
+          sx={{ color: "#865FF5", fontSize: "2rem", cursor: "pointer" }}
+          onClick={() => setCurrentPage((prev) => prev + 1)}
+        />
       </Box>
     </Box>
   );

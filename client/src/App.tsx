@@ -4,17 +4,38 @@ import { Needs } from "./components/Needs";
 import { Sol1 } from "./components/Sol1";
 import { Sol2 } from "./components/Sol2";
 import { Sol3 } from "./components/Sol3";
+import { createTheme, ThemeProvider } from "@mui/material";
+import ReactPageScroller from "react-page-scroller";
+import { useState } from "react";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "Nanum Gothic",
+  },
+});
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(0);
+
   return (
-    <div className='App'>
-      <Main />
-      <Needs />
-      <Sol1 />
-      <Sol2 />
-      <Sol3 />
-      <Action />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className='App'>
+        <ReactPageScroller
+          animationTimer={700}
+          pageOnChange={(num) => {
+            setCurrentPage(num);
+          }}
+          customPageNumber={currentPage}
+        >
+          <Main setCurrentPage={setCurrentPage} />
+          <Needs setCurrentPage={setCurrentPage} />
+          <Sol1 setCurrentPage={setCurrentPage} />
+          <Sol2 setCurrentPage={setCurrentPage} />
+          <Sol3 setCurrentPage={setCurrentPage} />
+          <Action setCurrentPage={setCurrentPage} />
+        </ReactPageScroller>
+      </div>
+    </ThemeProvider>
   );
 }
 
