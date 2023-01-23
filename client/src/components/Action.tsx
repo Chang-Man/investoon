@@ -61,12 +61,83 @@ export function Action({ setCurrentPage }: Props) {
               <br /> 한 주를 드립니다!
             </Typography>
           </Box>
-          <FormControl sx={{ width: "100%" }}>
-            <Grid
-              container
-              sx={{ width: "100%", textAlign: "center" }}
-              spacing={5}
+          <FormControl
+            sx={{
+              width: "100%",
+              display: { xs: "flex", md: "none" },
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <input
+              style={{
+                width: "80%",
+                height: "45px",
+                border: "none",
+                fontSize: "1.2rem",
+                borderRadius: "45px",
+                boxSizing: "border-box",
+                paddingLeft: "5%",
+                // padding: "auto 20px auto 50px",
+                backgroundColor: "#D9D9D9",
+              }}
+            />
+            <Button
+              sx={{
+                mt: 5,
+                width: "40%",
+                height: "45px",
+                fontSize: "1.2rem",
+                borderRadius: "45px",
+                color: "white",
+                backgroundColor: "#865FF5",
+                "&:hover": {
+                  backgroundColor: "#865FF5",
+                },
+              }}
             >
+              완료
+            </Button>
+          </FormControl>
+          <FormControl
+            sx={{
+              width: "100%",
+              display: { xs: "none", md: "flex" },
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <input
+              style={{
+                width: "60%",
+                height: "45px",
+                border: "none",
+                fontSize: "1.2rem",
+                borderRadius: "45px",
+                boxSizing: "border-box",
+                paddingLeft: "5%",
+                // padding: "auto 20px auto 50px",
+                backgroundColor: "#D9D9D9",
+              }}
+            />
+            <Button
+              sx={{
+                width: "15%",
+                height: "45px",
+                fontSize: "1.2rem",
+                borderRadius: "45px",
+                color: "white",
+                backgroundColor: "#865FF5",
+                "&:hover": {
+                  backgroundColor: "#865FF5",
+                },
+              }}
+            >
+              완료
+            </Button>
+          </FormControl>
+          {/* <FormControl sx={{ width: "100%" }}>
+            <Grid container sx={{ width: "100%" }} spacing={5}>
               <Grid item xs={12} md={8}>
                 <input
                   style={{
@@ -75,13 +146,19 @@ export function Action({ setCurrentPage }: Props) {
                     border: "none",
                     fontSize: "1.2rem",
                     borderRadius: "45px",
+                    boxSizing: "border-box",
                     paddingLeft: "5%",
                     // padding: "auto 20px auto 50px",
                     backgroundColor: "#D9D9D9",
                   }}
                 ></input>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 <Button
                   sx={{
                     width: "50%",
@@ -99,7 +176,7 @@ export function Action({ setCurrentPage }: Props) {
                 </Button>
               </Grid>
             </Grid>
-          </FormControl>
+          </FormControl> */}
         </Box>
         <ArrowCircleUpIcon sx={{ color: "white", fontSize: "2rem" }} />
       </Box>
