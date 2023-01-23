@@ -14,7 +14,7 @@ export function Main({ setCurrentPage }: Props) {
     <Box
       sx={{
         width: "100%",
-        height: "100%",
+        height: "calc(var(--vh, 1vh) * 100)",
         boxSizing: "border-box",
         backgroundColor: "#865FF5",
         display: "flex",
