@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/api", routes);
 app.use(express.static("build"));
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/build/index.html");
+  res.sendFile(__dirname + "/dist/build/index.html");
 });
 
 app.listen(process.env.PORT || 5000, () => {
