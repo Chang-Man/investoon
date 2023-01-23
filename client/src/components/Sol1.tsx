@@ -33,7 +33,7 @@ export function Sol1({ setCurrentPage }: Props) {
             <br /> 주식처럼 사고 팔 수 있어요
           </Typography>
         </Box>
-        <Box sx={{ width: { md: "70%", xs: "100%" } }}>
+        <Box sx={{ width: { md: "65%", xs: "100%" } }}>
           {" "}
           <img src={InvestImg} style={{ width: "100%" }} />
         </Box>

@@ -61,45 +61,45 @@ export function Action({ setCurrentPage }: Props) {
               <br /> 한 주를 드립니다!
             </Typography>
           </Box>
-          <Grid
-            container
-            sx={{ width: "100%", textAlign: "center" }}
-            spacing={5}
-          >
-            <Grid item xs={12} md={8}>
-              <FormControl sx={{ width: "100%" }}>
+          <FormControl sx={{ width: "100%" }}>
+            <Grid
+              container
+              sx={{ width: "100%", textAlign: "center" }}
+              spacing={5}
+            >
+              <Grid item xs={12} md={8}>
                 <input
                   style={{
                     width: "100%",
-                    height: "60px",
+                    height: "45px",
                     border: "none",
-                    fontSize: "1.5rem",
-                    borderRadius: "60px",
+                    fontSize: "1.2rem",
+                    borderRadius: "45px",
                     paddingLeft: "5%",
                     // padding: "auto 20px auto 50px",
                     backgroundColor: "#D9D9D9",
                   }}
                 ></input>
-              </FormControl>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Button
-                sx={{
-                  width: "50%",
-                  height: "60px",
-                  fontSize: "1.5rem",
-                  borderRadius: "60px",
-                  color: "white",
-                  backgroundColor: "#865FF5",
-                  "&:hover": {
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Button
+                  sx={{
+                    width: "50%",
+                    height: "45px",
+                    fontSize: "1.2rem",
+                    borderRadius: "45px",
+                    color: "white",
                     backgroundColor: "#865FF5",
-                  },
-                }}
-              >
-                완료
-              </Button>
+                    "&:hover": {
+                      backgroundColor: "#865FF5",
+                    },
+                  }}
+                >
+                  완료
+                </Button>
+              </Grid>
             </Grid>
-          </Grid>
+          </FormControl>
         </Box>
         <ArrowCircleUpIcon sx={{ color: "white", fontSize: "2rem" }} />
       </Box>

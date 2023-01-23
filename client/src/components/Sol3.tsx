@@ -33,7 +33,7 @@ export function Sol3({ setCurrentPage }: Props) {
             <br /> 치솟는 수익률
           </Typography>
         </Box>
-        <Box sx={{ width: { md: "70%", xs: "100%" } }}>
+        <Box sx={{ width: { md: "65%", xs: "100%" } }}>
           {" "}
           <img src={IpExampleImg} style={{ width: "100%" }} />
         </Box>

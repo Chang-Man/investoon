@@ -33,7 +33,7 @@ export function Sol2({ setCurrentPage }: Props) {
             <br /> 배당 수익을 받아요
           </Typography>
         </Box>
-        <Box sx={{ width: { md: "70%", xs: "100%" } }}>
+        <Box sx={{ width: { md: "65%", xs: "100%" } }}>
           {" "}
           <img src={DividendImg} style={{ width: "100%" }} />
         </Box>

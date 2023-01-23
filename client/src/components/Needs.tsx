@@ -33,7 +33,7 @@ export function Needs({ setCurrentPage }: Props) {
             <br /> 소비만 하셨나요?
           </Typography>
         </Box>
-        <Box sx={{ width: { md: "70%", xs: "100%" } }}>
+        <Box sx={{ width: { md: "65%", xs: "100%" } }}>
           {" "}
           <img src={NeedsImg} style={{ width: "100%" }} />
         </Box>

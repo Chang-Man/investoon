@@ -15,10 +15,10 @@ export const Layout: React.FunctionComponent<Props> = ({
       sx={{
         height: "100%",
         weight: "100%",
-        pr: { xs: "5%", md: "10%" },
-        pl: { xs: "5%", md: "10%" },
-        pt: "2%",
-        pb: "2%",
+        pr: { xs: "7%", md: "10%" },
+        pl: { xs: "7%", md: "10%" },
+        pt: "3%",
+        pb: "3%",
         boxSizing: "border-box",
       }}
     >
