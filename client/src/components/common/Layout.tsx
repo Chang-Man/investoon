@@ -13,7 +13,7 @@ export const Layout: React.FunctionComponent<Props> = ({
   return (
     <Box
       sx={{
-        height: "100%",
+        height: "calc(var(--vh, 1vh) * 100)",
         weight: "100%",
         pr: { xs: "7%", md: "10%" },
         pl: { xs: "7%", md: "10%" },

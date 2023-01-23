@@ -15,7 +15,7 @@ export function Action({ setCurrentPage }: Props) {
   return (
     <Box
       sx={{
-        height: "100%",
+        height: "calc(var(--vh, 1vh) * 100)",
         weight: "100%",
         pr: { xs: "5%", md: "10%" },
         pl: { xs: "5%", md: "10%" },
