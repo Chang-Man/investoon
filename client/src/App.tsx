@@ -7,6 +7,7 @@ import { Sol3 } from "./components/Sol3";
 import { createTheme, ThemeProvider } from "@mui/material";
 import ReactPageScroller from "react-page-scroller";
 import { useState, useEffect } from "react";
+import RouteChangeTracker from "./components/common/RouteChangeTracker";
 
 const theme = createTheme({
   typography: {
