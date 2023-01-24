@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import { useState } from "react";
+import ReactGA from "react-ga";
 
 interface Props {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -143,6 +144,11 @@ export function Action({ setCurrentPage }: Props) {
               onSubmit={() => {
                 window.alert("제출 완료했습니다.");
                 // setEmail("");
+                ReactGA.event({
+                  category: "Form",
+                  action: "Email Submit",
+                  label: "email",
+                });
               }}
             >
               <input
