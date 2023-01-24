@@ -119,7 +119,7 @@ export function Action({ setCurrentPage }: Props) {
                   },
                 }}
                 onClick={() => {
-                  window.alert("제출 완료했습니다.");
+                  // window.alert("제출 완료했습니다.");
                   ReactGA.event({
                     category: "Button",
                     action: "submit email",

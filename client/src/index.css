@@ -12,7 +12,7 @@ html {
   
   div#root {
     height: 100%;
-    font-family: 'Nanum Gothic'
+    font-family: 'KoPubWorldDotum'
   }
 
   div .App {
@@ -20,12 +20,35 @@ html {
   }
   
   @font-face {
-    font-family: 'Nanum Gothic';
+    font-family: 'KoPubWorldDotum';
+    font-weight: 300;
     font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumLight.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: 'KoPubWorldDotum';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumMedium.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: 'KoPubWorldDotum';
     font-weight: 700;
-    src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot);
-    src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
-         /* url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff2) format('woff2'), */
-         url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff) format('woff'),
-         url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.ttf) format('truetype');
-  }
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubWorldDotumBold.ttf') format("truetype");
+    font-display: swap;
+}

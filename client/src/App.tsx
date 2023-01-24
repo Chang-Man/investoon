@@ -12,7 +12,7 @@ import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Nanum Gothic",
+    fontFamily: "KoPubWorldDotum",
   },
 });
 
