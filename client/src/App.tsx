@@ -23,6 +23,7 @@ function App() {
   useEffect(() => {
     setScreenSize();
   });
+  RouteChangeTracker();
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
