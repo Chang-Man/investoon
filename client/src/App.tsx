@@ -4,10 +4,11 @@ import { Needs } from "./components/Needs";
 import { Sol1 } from "./components/Sol1";
 import { Sol2 } from "./components/Sol2";
 import { Sol3 } from "./components/Sol3";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider, Box, IconButton } from "@mui/material";
 import ReactPageScroller from "react-page-scroller";
 import { useState, useEffect } from "react";
 import RouteChangeTracker from "./components/common/RouteChangeTracker";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 const theme = createTheme({
   typography: {
@@ -15,8 +16,7 @@ const theme = createTheme({
   },
 });
 
-function App() {
-  const [currentPage, setCurrentPage] = useState(0);
+export default function App() {
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -24,10 +24,39 @@ function App() {
   useEffect(() => {
     setScreenSize();
   });
-  RouteChangeTracker();
+
+  const [currentPage, setCurrentPage] = useState(0);
+
   return (
     <ThemeProvider theme={theme}>
-      <div className='App'>
+      <Box sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
+        <Box
+          sx={{
+            zIndex: 1000,
+            width: "100%",
+            position: "fixed",
+            padding: 3,
+            boxSizing: "border-box",
+            display: currentPage === 0 ? "none" : "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <IconButton />
+          <IconButton
+            onClick={() => setCurrentPage(0)}
+            sx={{
+              display: "block",
+              width: "42px",
+              height: "42px",
+              // position: "sticky",
+              color: "white",
+              backgroundColor: "#865FF5",
+            }}
+          >
+            <KeyboardDoubleArrowUpIcon />
+          </IconButton>
+        </Box>
+
         <ReactPageScroller
           animationTimer={700}
           pageOnChange={(num) => {
@@ -42,9 +71,7 @@ function App() {
           <Sol3 setCurrentPage={setCurrentPage} />
           <Action setCurrentPage={setCurrentPage} />
         </ReactPageScroller>
-      </div>
+      </Box>
     </ThemeProvider>
   );
 }
-
-export default App;

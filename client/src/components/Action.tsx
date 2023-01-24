@@ -9,13 +9,13 @@ import {
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import { useState } from "react";
 import ReactGA from "react-ga";
+import Investoon from "../public/investoon.png";
+import Logo from "../public/logo.png";
 
 interface Props {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 export function Action({ setCurrentPage }: Props) {
-  const [email, setEmail] = useState("");
-
   return (
     <Box
       sx={{
@@ -23,8 +23,8 @@ export function Action({ setCurrentPage }: Props) {
         weight: "100%",
         pr: { xs: "5%", md: "10%" },
         pl: { xs: "5%", md: "10%" },
-        pt: "2%",
-        pb: "2%",
+        pt: "8%",
+        // pb: "8%",
         boxSizing: "border-box",
       }}
     >
@@ -38,7 +38,7 @@ export function Action({ setCurrentPage }: Props) {
         }}
       >
         <ArrowCircleUpIcon
-          sx={{ color: "#865FF5", fontSize: "2rem", cursor: "pointer" }}
+          sx={{ color: "#737373", fontSize: "1.8rem", cursor: "pointer" }}
           onClick={() => setCurrentPage((prev) => prev - 1)}
         />
         <Box
@@ -55,14 +55,8 @@ export function Action({ setCurrentPage }: Props) {
               sx={{ display: { xs: "block", md: "none" }, fontWeight: "bold" }}
             >
               <span style={{ color: "#865FF5" }}>E-mail</span>을 남기면
-              <br /> 한 주를 드립니다!
-            </Typography>
-            <Typography
-              variant='h4'
-              sx={{ display: { xs: "none", md: "block" }, fontWeight: "bold" }}
-            >
-              <span style={{ color: "#865FF5" }}>E-mail</span>을 남기면
-              <br /> 한 주를 드립니다!
+              <br /> 정식 서비스 출시 후 무료로 유명 작품{" "}
+              <span style={{ color: "#865FF5" }}>한 주</span>를 드립니다!
             </Typography>
           </Box>
           <Box
@@ -85,6 +79,11 @@ export function Action({ setCurrentPage }: Props) {
               }}
               onSubmit={() => {
                 window.alert("제출 완료했습니다.");
+                ReactGA.event({
+                  category: "Form",
+                  action: "submit email with form",
+                  label: "form",
+                });
                 // setEmail("");
               }}
             >
@@ -93,7 +92,7 @@ export function Action({ setCurrentPage }: Props) {
                   width: "80%",
                   height: "45px",
                   border: "none",
-                  fontSize: "1.2rem",
+                  fontSize: "1rem",
                   borderRadius: "45px",
                   boxSizing: "border-box",
                   paddingLeft: "5%",
@@ -102,6 +101,7 @@ export function Action({ setCurrentPage }: Props) {
                 }}
                 name='email'
                 type='email'
+                placeholder='E-mail을 입력해주세요 :)'
                 // value={email}
                 // onChange={(e) => setEmail(e.target.value)}
               />
@@ -118,120 +118,47 @@ export function Action({ setCurrentPage }: Props) {
                     backgroundColor: "#865FF5",
                   },
                 }}
+                onClick={() => {
+                  window.alert("제출 완료했습니다.");
+                  ReactGA.event({
+                    category: "Button",
+                    action: "submit email",
+                    label: "submit",
+                  });
+                }}
                 type='submit'
               >
                 완료
               </Button>
             </form>
           </Box>
-          <Box
-            sx={{
-              width: "100%",
-              display: { xs: "none", md: "flex" },
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <form
-              method='POST'
-              action='https://script.google.com/macros/s/AKfycbx0ZQzgEaLHBD68YPmuQhsZ0AWq1-YlHPGfwHimWY16cMy_SduBwUD026MePLHyzDicNw/exec'
-              target='iframe1'
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-evenly",
-              }}
-              onSubmit={() => {
-                window.alert("제출 완료했습니다.");
-                // setEmail("");
-                ReactGA.event({
-                  category: "Form",
-                  action: "Email Submit",
-                  label: "email",
-                });
-              }}
-            >
-              <input
-                style={{
-                  width: "60%",
-                  height: "45px",
-                  border: "none",
-                  fontSize: "1.2rem",
-                  borderRadius: "45px",
-                  boxSizing: "border-box",
-                  paddingLeft: "5%",
-                  // padding: "auto 20px auto 50px",
-                  backgroundColor: "#D9D9D9",
-                }}
-                name='email'
-                type='email'
-                // value=''
-              />
-              <Button
-                sx={{
-                  width: "15%",
-                  height: "45px",
-                  fontSize: "1.2rem",
-                  borderRadius: "45px",
-                  color: "white",
-                  backgroundColor: "#865FF5",
-                  "&:hover": {
-                    backgroundColor: "#865FF5",
-                  },
-                }}
-              >
-                완료
-              </Button>
-            </form>
-            <iframe
-              id='iframe1'
-              name='iframe1'
-              style={{ display: "none" }}
-            ></iframe>
-          </Box>
-          {/* <FormControl sx={{ width: "100%" }}>
-            <Grid container sx={{ width: "100%" }} spacing={5}>
-              <Grid item xs={12} md={8}>
-                <input
-                  style={{
-                    width: "100%",
-                    height: "45px",
-                    border: "none",
-                    fontSize: "1.2rem",
-                    borderRadius: "45px",
-                    boxSizing: "border-box",
-                    paddingLeft: "5%",
-                    // padding: "auto 20px auto 50px",
-                    backgroundColor: "#D9D9D9",
-                  }}
-                ></input>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={4}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <Button
-                  sx={{
-                    width: "50%",
-                    height: "45px",
-                    fontSize: "1.2rem",
-                    borderRadius: "45px",
-                    color: "white",
-                    backgroundColor: "#865FF5",
-                    "&:hover": {
-                      backgroundColor: "#865FF5",
-                    },
-                  }}
-                >
-                  완료
-                </Button>
-              </Grid>
-            </Grid>
-          </FormControl> */}
+
+          <iframe
+            id='iframe1'
+            name='iframe1'
+            style={{ display: "none" }}
+          ></iframe>
         </Box>
-        <ArrowCircleUpIcon sx={{ color: "white", fontSize: "2rem" }} />
+        <ArrowCircleUpIcon sx={{ color: "white", fontSize: "1.8rem" }} />
+        <Box
+          sx={{
+            height: "25%",
+            width: "100vw",
+            bottom: 0,
+            backgroundColor: "#865FF5",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            pt: 5,
+          }}
+        >
+          <Box sx={{ width: "15%" }}>
+            <img style={{ width: "100%" }} src={Logo} alt='로고' />
+          </Box>
+          <Box sx={{ width: "25%" }}>
+            <img style={{ width: "100%" }} src={Investoon} alt='인베스툰' />
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

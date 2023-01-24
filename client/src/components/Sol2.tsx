@@ -20,21 +20,29 @@ export function Sol2({ setCurrentPage }: Props) {
         <Box sx={{ width: "100%", mb: 5 }}>
           <Typography
             variant='h5'
-            sx={{ display: { xs: "block", md: "none" }, fontWeight: "bold" }}
+            sx={{
+              display: { xs: "block", md: "none" },
+              lineHeight: 1.5,
+              fontWeight: "bold",
+              // fontSize: "1.2rem",
+            }}
           >
-            보유한 만큼 안정적으로
-            <br /> 배당 수익을 받아요
+            보유한 지분만큼 매월 <br />
+            <span style={{ color: "#865FF5" }}>안정적</span>
+            으로 <br />
+            <span style={{ color: "#865FF5" }}>배당 수익</span>을 받아보세요.
           </Typography>
           <Typography
             variant='h4'
             sx={{ display: { xs: "none", md: "block" }, fontWeight: "bold" }}
           >
-            보유한 만큼 안정적으로
-            <br /> 배당 수익을 받아요
+            보유한 지분만큼 매월 <br />
+            <span style={{ color: "#865FF5" }}>안정적</span>
+            으로 <br />
+            <span style={{ color: "#865FF5" }}>배당 수익</span>을 받아보세요.
           </Typography>
         </Box>
-        <Box sx={{ width: { md: "65%", xs: "100%" } }}>
-          {" "}
+        <Box sx={{ width: "95%" }}>
           <img src={DividendImg} style={{ width: "100%" }} />
         </Box>
       </Box>
