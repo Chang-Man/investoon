@@ -7,11 +7,14 @@ import {
   Typography,
 } from "@mui/material";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+import { useState } from "react";
 
 interface Props {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 export function Action({ setCurrentPage }: Props) {
+  const [email, setEmail] = useState("");
+
   return (
     <Box
       sx={{
@@ -61,7 +64,7 @@ export function Action({ setCurrentPage }: Props) {
               <br /> 한 주를 드립니다!
             </Typography>
           </Box>
-          <FormControl
+          <Box
             sx={{
               width: "100%",
               display: { xs: "flex", md: "none" },
@@ -69,37 +72,58 @@ export function Action({ setCurrentPage }: Props) {
               alignItems: "center",
             }}
           >
-            <input
+            <form
+              method='POST'
+              action='https://script.google.com/macros/s/AKfycbx0ZQzgEaLHBD68YPmuQhsZ0AWq1-YlHPGfwHimWY16cMy_SduBwUD026MePLHyzDicNw/exec'
+              target='iframe1'
               style={{
-                width: "80%",
-                height: "45px",
-                border: "none",
-                fontSize: "1.2rem",
-                borderRadius: "45px",
-                boxSizing: "border-box",
-                paddingLeft: "5%",
-                // padding: "auto 20px auto 50px",
-                backgroundColor: "#D9D9D9",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
-            />
-            <Button
-              sx={{
-                mt: 5,
-                width: "40%",
-                height: "45px",
-                fontSize: "1.2rem",
-                borderRadius: "45px",
-                color: "white",
-                backgroundColor: "#865FF5",
-                "&:hover": {
-                  backgroundColor: "#865FF5",
-                },
+              onSubmit={() => {
+                window.alert("제출 완료했습니다.");
+                // setEmail("");
               }}
             >
-              완료
-            </Button>
-          </FormControl>
-          <FormControl
+              <input
+                style={{
+                  width: "80%",
+                  height: "45px",
+                  border: "none",
+                  fontSize: "1.2rem",
+                  borderRadius: "45px",
+                  boxSizing: "border-box",
+                  paddingLeft: "5%",
+                  // padding: "auto 20px auto 50px",
+                  backgroundColor: "#D9D9D9",
+                }}
+                name='email'
+                type='email'
+                // value={email}
+                // onChange={(e) => setEmail(e.target.value)}
+              />
+              <Button
+                sx={{
+                  mt: 5,
+                  width: "40%",
+                  height: "45px",
+                  fontSize: "1.2rem",
+                  borderRadius: "45px",
+                  color: "white",
+                  backgroundColor: "#865FF5",
+                  "&:hover": {
+                    backgroundColor: "#865FF5",
+                  },
+                }}
+                type='submit'
+              >
+                완료
+              </Button>
+            </form>
+          </Box>
+          <Box
             sx={{
               width: "100%",
               display: { xs: "none", md: "flex" },
@@ -107,35 +131,58 @@ export function Action({ setCurrentPage }: Props) {
               justifyContent: "space-evenly",
             }}
           >
-            <input
+            <form
+              method='POST'
+              action='https://script.google.com/macros/s/AKfycbx0ZQzgEaLHBD68YPmuQhsZ0AWq1-YlHPGfwHimWY16cMy_SduBwUD026MePLHyzDicNw/exec'
+              target='iframe1'
               style={{
-                width: "60%",
-                height: "45px",
-                border: "none",
-                fontSize: "1.2rem",
-                borderRadius: "45px",
-                boxSizing: "border-box",
-                paddingLeft: "5%",
-                // padding: "auto 20px auto 50px",
-                backgroundColor: "#D9D9D9",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-evenly",
               }}
-            />
-            <Button
-              sx={{
-                width: "15%",
-                height: "45px",
-                fontSize: "1.2rem",
-                borderRadius: "45px",
-                color: "white",
-                backgroundColor: "#865FF5",
-                "&:hover": {
-                  backgroundColor: "#865FF5",
-                },
+              onSubmit={() => {
+                window.alert("제출 완료했습니다.");
+                // setEmail("");
               }}
             >
-              완료
-            </Button>
-          </FormControl>
+              <input
+                style={{
+                  width: "60%",
+                  height: "45px",
+                  border: "none",
+                  fontSize: "1.2rem",
+                  borderRadius: "45px",
+                  boxSizing: "border-box",
+                  paddingLeft: "5%",
+                  // padding: "auto 20px auto 50px",
+                  backgroundColor: "#D9D9D9",
+                }}
+                name='email'
+                type='email'
+                // value=''
+              />
+              <Button
+                sx={{
+                  width: "15%",
+                  height: "45px",
+                  fontSize: "1.2rem",
+                  borderRadius: "45px",
+                  color: "white",
+                  backgroundColor: "#865FF5",
+                  "&:hover": {
+                    backgroundColor: "#865FF5",
+                  },
+                }}
+              >
+                완료
+              </Button>
+            </form>
+            <iframe
+              id='iframe1'
+              name='iframe1'
+              style={{ display: "none" }}
+            ></iframe>
+          </Box>
           {/* <FormControl sx={{ width: "100%" }}>
             <Grid container sx={{ width: "100%" }} spacing={5}>
               <Grid item xs={12} md={8}>
