@@ -19,10 +19,10 @@ export function Action({ setCurrentPage }: Props) {
   return (
     <Box
       sx={{
-        height: "calc(var(--vh, 1vh) * 100)",
+        height: "100%",
         weight: "100%",
-        pr: { xs: "5%", md: "10%" },
-        pl: { xs: "5%", md: "10%" },
+        pr: "5%",
+        pl: "5%",
         pt: "8%",
         // pb: "8%",
         boxSizing: "border-box",
@@ -50,10 +50,7 @@ export function Action({ setCurrentPage }: Props) {
           }}
         >
           <Box sx={{ width: "100%", mb: 5 }}>
-            <Typography
-              variant='h5'
-              sx={{ display: { xs: "block", md: "none" }, fontWeight: "bold" }}
-            >
+            <Typography variant='h5' sx={{ fontWeight: "bold" }}>
               <span style={{ color: "#865FF5" }}>E-mail</span>을 남기면
               <br /> 정식 서비스 출시 후 무료로 유명 작품{" "}
               <span style={{ color: "#865FF5" }}>한 주</span>를 드립니다!
@@ -62,7 +59,7 @@ export function Action({ setCurrentPage }: Props) {
           <Box
             sx={{
               width: "100%",
-              display: { xs: "flex", md: "none" },
+              display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}

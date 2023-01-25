@@ -21,19 +21,10 @@ export function Sol3({ setCurrentPage }: Props) {
           <Typography
             variant='h5'
             sx={{
-              display: { xs: "block", md: "none" },
               lineHeight: 1.5,
               fontWeight: "bold",
               // fontSize: "1.2rem",
             }}
-          >
-            <span style={{ color: "#865FF5" }}>영상화</span> 될 작품에 투자하고
-            <br /> 치솟는 <span style={{ color: "#865FF5" }}>수익률</span> 을
-            경험하세요
-          </Typography>
-          <Typography
-            variant='h4'
-            sx={{ display: { xs: "none", md: "block" }, fontWeight: "bold" }}
           >
             <span style={{ color: "#865FF5" }}>영상화</span> 될 작품에 투자하고
             <br /> 치솟는 <span style={{ color: "#865FF5" }}>수익률</span> 을
