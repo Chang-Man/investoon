@@ -6,9 +6,9 @@ import "./index.css";
 import ReactGA from "react-ga";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID;
-
-ReactGA.initialize(TRACKING_ID || "");
+// const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID;
+const TRACKING_ID = "UA-229317886-3";
+ReactGA.initialize(TRACKING_ID);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
