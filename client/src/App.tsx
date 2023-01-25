@@ -26,7 +26,7 @@ export default function App() {
   });
 
   const [currentPage, setCurrentPage] = useState(0);
-
+  RouteChangeTracker();
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
